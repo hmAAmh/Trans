@@ -36,7 +36,6 @@ public class Draw_script : MonoBehaviour
         currentLineRenderer = brushInstance.GetComponent<LineRenderer>();
 
         Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
-
         currentLineRenderer.SetPosition(0, mousePos);
         currentLineRenderer.SetPosition(1, mousePos);
     }
