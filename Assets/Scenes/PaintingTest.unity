@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 519420031}
   brush: {fileID: 1906424497}
-  Material1: {fileID: 2100000, guid: 8608bf5cf17ab744fa87fd1f70b24020, type: 2}
-  Material2: {fileID: 2100000, guid: 751c0d7ec9fc75346bc94bcb0f3487c0, type: 2}
+  Material1: {fileID: 2100000, guid: def15e64eecb7b5438003a9f68a33d41, type: 2}
+  Material2: {fileID: 2100000, guid: 8630c421fac4d8f4fa8263c79ba9f83b, type: 2}
 --- !u!4 &14970312
 Transform:
   m_ObjectHideFlags: 0
