@@ -13,13 +13,20 @@ public class Draw_script : MonoBehaviour
     LineRenderer currentLineRenderer;
 
     Vector2 lastPos;
+
+    GameObject manager;
+    sceneManager_scr managerScr;
     
     void Start(){
+        manager = GameObject.Find("sceneManager");
+        managerScr = manager.GetComponent<sceneManager_scr>();
         materialUsed = Material1;
     }
 
     private void Update(){
-        Draw();
+        if(managerScr.drawable){
+            Draw();
+        }
     }
     
     void Draw(){
