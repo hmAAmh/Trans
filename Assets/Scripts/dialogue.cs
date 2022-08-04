@@ -12,7 +12,6 @@ public class dialogue : MonoBehaviour
     //public string sentence;
     Text textComp;
     int sentenceLength, sentenceIndex, wordsDisplayed, frameCounter, frameTextRate;
-    GameObject manager;
     sceneManager_scr managerScr;
 
     public bool Activated;
@@ -20,8 +19,7 @@ public class dialogue : MonoBehaviour
 
     void Start(){
         textComp = gameObject.GetComponent<Text>();
-        manager = GameObject.Find("sceneManager");
-        managerScr = manager.GetComponent<sceneManager_scr>();
+        managerScr = GameObject.Find("sceneManager").GetComponent<sceneManager_scr>();
         
         sentenceIndex = 0;
         wordsDisplayed = 0;
@@ -55,7 +53,7 @@ public class dialogue : MonoBehaviour
                         Destroy(transform.parent.gameObject);
                         Destroy(gameObject);
                         if(final){
-                            SceneManager.LoadScene (sceneName:"JermaDumpy");
+                            SceneManager.LoadScene (sceneName:managerScr.nextScene);
                         }
                     }
                     else{  
