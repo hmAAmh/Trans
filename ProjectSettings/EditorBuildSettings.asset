@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PaintingTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/JermaDumpy.unity
+    guid: dbc2b6cb2490f3c4abc851cb9de9aec5
+  - enabled: 1
+    path: Assets/Scenes/DialogTest.unity
+    guid: 6a76f6ffcee7e9244ad2c0c0d96317f2
   m_configObjects: {}
