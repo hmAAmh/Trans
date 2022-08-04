@@ -509,6 +509,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &561392525
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_Name
+      value: blackScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452406, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
 --- !u!1001 &603077745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -652,6 +713,7 @@ MonoBehaviour:
   - When you skip through this, the game should start
   - The goal here is to make it so you can't paint while there's text on screen
   - Give it a shot!
+  blackScreen: {fileID: 1714694292}
   Activated: 0
 --- !u!114 &679602903
 MonoBehaviour:
@@ -1483,6 +1545,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
+      propertyPath: blackScreen
+      value: 
+      objectReference: {fileID: 1714694292}
+    - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1803,6 +1869,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8968155906323929376, guid: 1e4b69b8995363946969ea849a261d48, type: 3}
   m_PrefabInstance: {fileID: 1596654822}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1714694291
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: m_Name
+      value: blackScreen (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+--- !u!1 &1714694292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+  m_PrefabInstance: {fileID: 1714694291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813876426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,7 +2041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1906424499}
   - component: {fileID: 1906424498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2171,7 +2299,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -9999
   m_Sprite: {fileID: 21300000, guid: b449475a8167ff445a28ca19d63ffe4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2273,6 +2401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawable: 0
+  fadeIn: 1
   nextScene: JermaDumpy
 --- !u!1001 &8968155906558337659
 PrefabInstance:

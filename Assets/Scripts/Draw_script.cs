@@ -8,7 +8,9 @@ public class Draw_script : MonoBehaviour
     public GameObject brush;
     public Material Material1;
     public Material Material2;
-    Material materialUsed;
+    public Material materialUsed;
+
+    int curLayer;
 
     LineRenderer currentLineRenderer;
 
@@ -21,6 +23,7 @@ public class Draw_script : MonoBehaviour
         manager = GameObject.Find("sceneManager");
         managerScr = manager.GetComponent<sceneManager_scr>();
         materialUsed = Material1;
+        curLayer = -9998;
     }
 
     private void Update(){
@@ -62,6 +65,8 @@ public class Draw_script : MonoBehaviour
         }
 
         currentLineRenderer.GetComponent<LineRenderer>().material = materialUsed;
+        currentLineRenderer.sortingOrder  = curLayer;
+        curLayer++;
 
         
         currentLineRenderer.SetPosition(0, mousePos);
