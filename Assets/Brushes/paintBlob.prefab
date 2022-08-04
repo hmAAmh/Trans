@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8968155906323929376}
   - component: {fileID: 8968155906323929377}
-  - component: {fileID: 4475994112477312386}
+  - component: {fileID: 6378183992849618331}
   m_Layer: 0
   m_Name: paintBlob
   m_TagString: paintBlob
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 814512c22c2a49c4f82e8a068bbc0660, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f0a9d41222b19bf479a33fb9dce82104, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4475994112477312386
-CircleCollider2D:
+--- !u!70 &6378183992849618331
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -97,5 +97,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5
+  m_Size: {x: 0.57, y: 1.1}
+  m_Direction: 0
