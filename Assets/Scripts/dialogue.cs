@@ -31,8 +31,6 @@ public class dialogue : MonoBehaviour
 
         sentenceLength = sentences.Length;
         textComp.text = sentences[sentenceIndex].Substring(0, wordsDisplayed);
-
-        
     }
 
     void Update(){
@@ -70,8 +68,9 @@ public class dialogue : MonoBehaviour
     }
 
     public void setActive(){
+        float pos = 3.76001f;
         Activated = true;
-        transform.parent.position = new Vector3(500f, transform.parent.position.y, transform.parent.position.z);
+        transform.parent.position = new Vector3(pos, transform.parent.position.y, transform.parent.position.z);
         final = true;
     }
 }
