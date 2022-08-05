@@ -586,12 +586,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - 'This is some text dialogue.
+  - 'The moment my brush touched the canvas, I couldn''t stop. The soft yellows from
+    my desk lamp became my world, everything else just faded away. '
+  - 'I completely lost track of time, my mind swimming in the blues and greens of
+    my sculpted sea. I don''t think I looked away from it once. Maybe. It was a long
+    time ago.
 
-    With multiple lines!'
-  - When you skip through this, the game should start
-  - The goal here is to make it so you can't paint while there's text on screen
-  - Give it a shot!
+'
+  - '    I finished the entire assignment that night. I remember by the time I was
+    done, it was almost 4 AM. Intro to Painting was at 8 the next morning, and so
+    I scrambled to get to sleep as fast as I could.'
+  - "Any other day I don't think I would've made it, but somehow... Somehow. \nIt
+    was a damn good painting. "
+  - I wish they gave it back.
   blackScreen: {fileID: 1819305244}
   Activated: 0
 --- !u!114 &679602903
@@ -626,7 +633,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.5
+    m_LineSpacing: 1
   m_Text: when you skip through it, the game should start
 --- !u!222 &679602904
 CanvasRenderer:
@@ -1335,7 +1342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3048106404413452407, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
       propertyPath: m_SortingOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
@@ -1588,7 +1595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910465, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: m_FontData.m_LineSpacing
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: Activated
@@ -1604,22 +1611,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: 'This is some text dialogue.
-
-        With multiple lines!'
+      value: 'Hey! I''m Delphi. Two weeks ago I graduated from college, and today
+        I wanted to share some of those old memories with you. '
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: When you skip through this, the game should start
+      value: 'When life gets stressful, I find that remembering my experiences like
+        this helps me calm down. Helps put into perspective how far I''ve come.
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: The goal here is to make it so you can't paint while there's text on
-        screen
+      value: "   I was a biology major as a freshman, but I had no idea what I wanted
+        to do until ART-02, the Intro to Painting elective. Unlike the galleries
+        of chemical diagrams, it felt right, like I just \u201Cunderstood\u201D painting.
+        Like it understood me. "
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: Give it a shot!
+      value: 'The day it all clicked was our midterm, it was something about water.
+        I painted the beach. '
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957830181504, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: m_Name
@@ -2145,7 +2157,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 751c0d7ec9fc75346bc94bcb0f3487c0, type: 2}
+  - {fileID: 2100000, guid: 3ea57023ef2c46c469dc0523382ba5fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

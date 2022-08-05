@@ -28,7 +28,7 @@ public class dialogue : MonoBehaviour
         sentenceIndex = 0;
         wordsDisplayed = 0;
         frameCounter = 0;
-        frameTextRate = 8;
+        frameTextRate = 24;
         final = false;
 
         tweenedBlowup = true;

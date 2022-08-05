@@ -154,7 +154,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.5
+    m_LineSpacing: 2
   m_Text: CUM
 --- !u!114 &8955508957319910844
 MonoBehaviour:
@@ -172,6 +172,7 @@ MonoBehaviour:
   - I
   - 'AM '
   - CUM!!!
+  blackScreen: {fileID: 0}
   Activated: 0
 --- !u!1 &8955508957830181504
 GameObject:

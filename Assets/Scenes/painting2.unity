@@ -154,9 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 519420031}
   brush: {fileID: 1906424497}
-  Material1: {fileID: 2100000, guid: def15e64eecb7b5438003a9f68a33d41, type: 2}
-  Material2: {fileID: 2100000, guid: 8630c421fac4d8f4fa8263c79ba9f83b, type: 2}
-  materialUsed: {fileID: 0}
+  Material1: {fileID: 2100000, guid: 3ea57023ef2c46c469dc0523382ba5fc, type: 2}
+  Material2: {fileID: 2100000, guid: 3ea57023ef2c46c469dc0523382ba5fc, type: 2}
+  materialUsed: {fileID: 2100000, guid: 3ea57023ef2c46c469dc0523382ba5fc, type: 2}
   currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &14970312
 Transform:
@@ -672,14 +672,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - " I can\u2019t really avoid it, though. I wouldn\u2019t be who I am without them.
-    \r\n\r\n"
-  - "I don\u2019t know if I\u2019ll ever be like that with someone again. It\u2019s
-    definitely hard to imagine, but I also couldn\u2019t have imagined we\u2019d
-    be like that before it happened, so who knows."
-  - "I don\u2019t even know if I\u2019m ready for something like that again, butI
-    don\u2019t really think I need it either. I can handle myself for a while. Despite
-    everything, we had good times."
+  - 'I try not to think about them too much. Even though it''s been so long, it still
+    sort of hurts. I still don''t know what we were, I haven''t spoken with them
+    in years and I don''t see that changing anytime soon. '
+  - 'Still, I just wish things could''ve gone differently. God knows I''ve gone over
+    everything a million times in my head, over what I could''ve done differently.
+    It''s easy looking back.
+
+'
+  - ' I can''t really avoid it, though. I wouldn''t be who I am without them. '
+  - 'I don''t know if I''ll ever be like that with someone again. It''s definitely
+    hard to imagine, but I also couldn''t have imagined we''d be like that before
+    it happened, so who knows. '
+  - 'I don''t even know if I''m ready for something like that again, but I don''t
+    really think I need it either. I can handle myself for a while. '
+  - Despite everything, we had good times.
   blackScreen: {fileID: 2057854444}
   Activated: 0
 --- !u!114 &679602903
@@ -714,7 +721,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.5
+    m_LineSpacing: 1
   m_Text: when you skip through it, the game should start
 --- !u!222 &679602904
 CanvasRenderer:
@@ -1586,7 +1593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910465, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: m_FontData.m_LineSpacing
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: Activated
@@ -1598,7 +1605,7 @@ PrefabInstance:
       objectReference: {fileID: 2057854444}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -1608,21 +1615,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Every day I regret never going back to that damn park. \nI didn\u2019t
-        think I could handle it, I still don\u2019t, but I still just should\u2019ve
-        just been there one more time.\r\n"
+      value: "Every day I regret never going back to that damn park. \nI didn't think
+        I could handle it, I still don't, but I still just should've just been there
+        one more time.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "\rI try not to think about them too much. Even though it's been so
-        long, it still sort of hurts. \nI still don\u2019t know what we were, I haven\u2019t
-        spoken with them in years and I don\u2019t see that changing anytime soon."
+      value: "\rIt was October, and the trees were the color of fire.\nI had brought
+        one of my old blankets for use to eat on. Its lavender stripes were hideous,
+        but they fit pretty well for a picnic. \nAlex had cooked some rolls for us,
+        but by the time we'd arrived they'd all gone cold.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Still, I just wish things could\u2019ve gone differently. God knows
-        I\u2019ve gone over everything a million times in my head, over what I could\u2019ve
-        done differently. \nIt\u2019s easy looking back."
+      value: They seemed disappointed; I didn't mind. The rolls were still great.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: " I remember Alex wearing that dorky teal windbreaker they brought everywhere.
+        \nThey must've thought it was going to be frigid like every other day in
+        that damned month, but... for some reason, that day, it was warm."
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957830181504, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: m_Name
@@ -2082,7 +2094,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 751c0d7ec9fc75346bc94bcb0f3487c0, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

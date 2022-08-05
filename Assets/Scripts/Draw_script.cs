@@ -19,6 +19,8 @@ public class Draw_script : MonoBehaviour
 
     GameObject manager;
     sceneManager_scr managerScr;
+
+    bool rendered;
     
     void Start(){
         manager = GameObject.Find("sceneManager");
@@ -26,6 +28,7 @@ public class Draw_script : MonoBehaviour
         materialUsed = Material1;
         curLayer = -9998;
         currentColor = Color.white;
+        rendered = false;
     }
 
     private void Update(){
@@ -38,7 +41,7 @@ public class Draw_script : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             CreateBrush();
         }
-        if(Input.GetKey(KeyCode.Mouse0)){
+        if(Input.GetKey(KeyCode.Mouse0) && rendered){
             Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
             if(mousePos != lastPos){
                 AddAPoint(mousePos);
@@ -76,9 +79,11 @@ public class Draw_script : MonoBehaviour
         
         currentLineRenderer.SetPosition(0, mousePos);
         currentLineRenderer.SetPosition(1, mousePos);
+        rendered = true;
     }
 
     void AddAPoint(Vector2 pointPos){
+        
         currentLineRenderer.positionCount++;
 
         int positionIndex = currentLineRenderer.positionCount - 1;
