@@ -71,6 +71,7 @@ public class dialogue : MonoBehaviour
         Activated = true;
         transform.parent.position = new Vector3(pos, transform.parent.position.y, transform.parent.position.z);
         final = true;
+        managerScr.drawable = false;
     }
 
     void click(){
@@ -132,7 +133,7 @@ public class dialogue : MonoBehaviour
                     scaleLeadIn += scaleLeadInAmount;
                 }
                 else{
-                    managerScr.drawable = true;
+                    
                     Destroy(transform.parent.gameObject);
                     Destroy(gameObject);
                     if(final){
@@ -140,6 +141,9 @@ public class dialogue : MonoBehaviour
                         fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;
                         fadeOut.GetComponent<fadeIn_scr>().active = true;
                         fadeOut.transform.position = new Vector3(0f, 0f, 0f);
+                    }
+                    else{
+                        managerScr.drawable = true;
                     }
                 }
             }
