@@ -9,6 +9,7 @@ public class Draw_script : MonoBehaviour
     public Material Material1;
     public Material Material2;
     public Material materialUsed;
+    [HideInInspector] public Color currentColor;
 
     int curLayer;
 
@@ -24,6 +25,7 @@ public class Draw_script : MonoBehaviour
         managerScr = manager.GetComponent<sceneManager_scr>();
         materialUsed = Material1;
         curLayer = -9998;
+        currentColor = Color.white;
     }
 
     private void Update(){
@@ -60,11 +62,14 @@ public class Draw_script : MonoBehaviour
             {
                 if (hit.transform.tag == "paintBlob"){
                     materialUsed = hit.transform.GetComponent<SpriteRenderer>().material;
+                    currentColor = hit.transform.GetComponent<SpriteRenderer>().color;
                 }
             }
         }
 
         currentLineRenderer.GetComponent<LineRenderer>().material = materialUsed;
+        currentLineRenderer.startColor = currentColor;
+        currentLineRenderer.endColor = currentColor;
         currentLineRenderer.sortingOrder  = curLayer;
         curLayer++;
 

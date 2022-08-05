@@ -16,6 +16,6 @@ public class brush_scr : MonoBehaviour
     void Update(){
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
-        cursorHead.transform.GetComponent<SpriteRenderer>().material = draw.transform.GetComponent<Draw_script>().materialUsed;
+        cursorHead.transform.GetComponent<SpriteRenderer>().color = draw.transform.GetComponent<Draw_script>().currentColor;
     }
 }
