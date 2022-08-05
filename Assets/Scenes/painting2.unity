@@ -438,7 +438,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -672,12 +672,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - 'This is some text dialogue.
-
-    With multiple lines!'
-  - When you skip through this, the game should start
-  - The goal here is to make it so you can't paint while there's text on screen
-  - Give it a shot!
+  - " I can\u2019t really avoid it, though. I wouldn\u2019t be who I am without them.
+    \r\n\r\n"
+  - "I don\u2019t know if I\u2019ll ever be like that with someone again. It\u2019s
+    definitely hard to imagine, but I also couldn\u2019t have imagined we\u2019d
+    be like that before it happened, so who knows."
+  - "I don\u2019t even know if I\u2019m ready for something like that again, butI
+    don\u2019t really think I need it either. I can handle myself for a while. Despite
+    everything, we had good times."
   blackScreen: {fileID: 2057854444}
   Activated: 0
 --- !u!114 &679602903
@@ -1415,7 +1417,7 @@ Transform:
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1344657542
 PrefabInstance:
@@ -1600,22 +1602,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: 'This is some text dialogue.
-
-        With multiple lines!'
+      value: "It's tough to go through my college experiences without coming back
+        to them. \nTheir laugh, the way they always knew what to say, how it felt
+        like they knew everything about every book ever made."
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: When you skip through this, the game should start
+      value: "Every day I regret never going back to that damn park. \nI didn\u2019t
+        think I could handle it, I still don\u2019t, but I still just should\u2019ve
+        just been there one more time.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: The goal here is to make it so you can't paint while there's text on
-        screen
+      value: "\rI try not to think about them too much. Even though it's been so
+        long, it still sort of hurts. \nI still don\u2019t know what we were, I haven\u2019t
+        spoken with them in years and I don\u2019t see that changing anytime soon."
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: Give it a shot!
+      value: "Still, I just wish things could\u2019ve gone differently. God knows
+        I\u2019ve gone over everything a million times in my head, over what I could\u2019ve
+        done differently. \nIt\u2019s easy looking back."
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957830181504, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: m_Name
@@ -2166,7 +2173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2002357945
 GameObject:
