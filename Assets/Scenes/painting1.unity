@@ -2492,6 +2492,7 @@ MonoBehaviour:
   drawable: 0
   fadeIn: 1
   nextScene: painting2
+  musc: event:/muscMorning
 --- !u!1001 &6728173377869565592
 PrefabInstance:
   m_ObjectHideFlags: 0

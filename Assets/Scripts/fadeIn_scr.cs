@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class fadeIn_scr : MonoBehaviour
 {
-    float initRate;
-    float initChange;
-    public bool fadeIn;
-    public bool active;
+    float initRate, initChange;
+    public bool fadeIn, active;
+    private bool muscFadeOut = false;
+    
     Color tmp;
     sceneManager_scr managerScr;
 
-    void Start()
-    {
+    void Start(){
         managerScr = GameObject.Find("sceneManager").GetComponent<sceneManager_scr>();
 
         initRate = 0.0001f;
@@ -31,9 +30,13 @@ public class fadeIn_scr : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = tmp;
     }
 
-    void Update()
-    {
+    void Update(){
         if(active){
+            if(!fadeIn && !muscFadeOut){
+                muscFadeOut = true;
+                managerScr.muscFadeOut = true;
+            }
+
             tmp = gameObject.GetComponent<SpriteRenderer>().color;
             tmp.a -= initRate;
             gameObject.GetComponent<SpriteRenderer>().color = tmp;

@@ -150,6 +150,7 @@ public class dialogue : MonoBehaviour
                     Destroy(transform.parent.gameObject);
                     Destroy(gameObject);
                     if(final){
+                        
                         RuntimeManager.CreateInstance("event:/sceneEnd").start();
                         GameObject fadeOut = Instantiate(blackScreen);
                         fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;
