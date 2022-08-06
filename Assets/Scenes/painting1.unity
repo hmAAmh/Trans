@@ -402,8 +402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf13f1599e64124c9bd9a6ab942519c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelIndex: 1
   renderCam: {fileID: 519420031}
-  photoToHud: {fileID: 6707253812465401395, guid: 550a015b135458d4996121b346ed3346, type: 3}
+  photoPrefab: {fileID: 6707253812465401395, guid: 550a015b135458d4996121b346ed3346, type: 3}
   minX_percent: 3.2
   minY_percent: 8.5
   xSize_percent: 52.2

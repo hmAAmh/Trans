@@ -17,6 +17,7 @@ public class dialogue : MonoBehaviour
     float scaleAmount, scaleLeadIn, scaleLeadInInit, scaleLeadInAmount;
     sceneManager_scr managerScr;
     public GameObject blackScreen;
+    Screenshot screenshot;
 
     public bool Activated;
     bool final, tweenedBlowup, tweenedStart, tweenedEnd, tweenActivate;
@@ -24,6 +25,7 @@ public class dialogue : MonoBehaviour
     void Start(){
         textComp = gameObject.GetComponent<Text>();
         managerScr = GameObject.Find("sceneManager").GetComponent<sceneManager_scr>();
+        screenshot = GameObject.FindWithTag("MainCamera").GetComponent<Screenshot>();
         
         transform.parent.localScale = new Vector3(0f, 0f, -5f);
         sentenceIndex = 0;
@@ -79,6 +81,10 @@ public class dialogue : MonoBehaviour
         final = true;
         managerScr.drawable = false;
         RuntimeManager.CreateInstance("event:/paperFlip").start();
+
+        // Take a screenshot of the finished painting, and store it as a sprite.
+        StartCoroutine(screenshot.TakeScreenshotCoroutine());
+
     }
 
     void click(){

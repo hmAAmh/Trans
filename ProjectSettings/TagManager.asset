@@ -6,6 +6,9 @@ TagManager:
   tags:
   - paintBlob
   - drawingCanvas
+  - Memory
+  - Background
+  - PaintingScreenshot
   layers:
   - Default
   - TransparentFX
