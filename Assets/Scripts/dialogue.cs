@@ -18,6 +18,7 @@ public class dialogue : MonoBehaviour
     sceneManager_scr managerScr;
     public GameObject blackScreen;
     Screenshot screenshot;
+    MemoryFade memoryFade;
 
     public bool Activated;
     bool final, tweenedBlowup, tweenedStart, tweenedEnd, tweenActivate;
@@ -26,6 +27,7 @@ public class dialogue : MonoBehaviour
         textComp = gameObject.GetComponent<Text>();
         managerScr = GameObject.Find("sceneManager").GetComponent<sceneManager_scr>();
         screenshot = GameObject.FindWithTag("MainCamera").GetComponent<Screenshot>();
+        memoryFade = GameObject.FindWithTag("Memory").GetComponent<MemoryFade>();
         
         transform.parent.localScale = new Vector3(0f, 0f, -5f);
         sentenceIndex = 0;
@@ -70,7 +72,6 @@ public class dialogue : MonoBehaviour
                 }
                 click();
             }
-
         }
     }
 
@@ -84,6 +85,8 @@ public class dialogue : MonoBehaviour
 
         // Take a screenshot of the finished painting, and store it as a sprite.
         StartCoroutine(screenshot.TakeScreenshotCoroutine());
+        memoryFade.StartFade(false, 1f);
+
 
     }
 
@@ -165,6 +168,7 @@ public class dialogue : MonoBehaviour
                     }
                     else{
                         managerScr.drawable = true;
+                        memoryFade.StartFade(true, 2f);
                     }
                 }
             }
