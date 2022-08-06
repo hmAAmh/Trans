@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Draw_script : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class Draw_script : MonoBehaviour
     }
 
     void CreateBrush(){
+        
         GameObject brushInstance = Instantiate(brush);
         currentLineRenderer = brushInstance.GetComponent<LineRenderer>();
         Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
@@ -66,6 +68,10 @@ public class Draw_script : MonoBehaviour
                 if (hit.transform.tag == "paintBlob"){
                     materialUsed = hit.transform.GetComponent<SpriteRenderer>().material;
                     currentColor = hit.transform.GetComponent<SpriteRenderer>().color;
+                    RuntimeManager.CreateInstance("event:/paintSelect").start();
+                }
+                else if (hit.transform.tag == "drawingCanvas"){
+                    RuntimeManager.CreateInstance("event:/painting").start();
                 }
             }
         }
