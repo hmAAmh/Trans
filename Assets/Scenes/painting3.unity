@@ -2564,7 +2564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawable: 0
   fadeIn: 1
-  nextScene: JermaDumpy
+  nextScene: ending
   musc: event:/muscEvening
   muscFadeOut: 0
 --- !u!1001 &8968155906558337659
