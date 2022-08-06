@@ -2429,6 +2429,7 @@ MonoBehaviour:
   drawable: 0
   fadeIn: 1
   nextScene: painting3
+  musc: event:/muscMidday
 --- !u!1001 &3048106404761676220
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40,6 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2819310850970250008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ff96b8dd514ec4992806864ad44bb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 41a7a2309910acf4cadaad945623f0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawable: 0
+  fadeIn: 1
+  nextScene: 
+  musc: event:/muscMorning

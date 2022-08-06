@@ -2528,6 +2528,7 @@ MonoBehaviour:
   drawable: 0
   fadeIn: 1
   nextScene: JermaDumpy
+  musc: event:/muscEvening
 --- !u!1001 &8968155906558337659
 PrefabInstance:
   m_ObjectHideFlags: 0
