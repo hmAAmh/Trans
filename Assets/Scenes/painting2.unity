@@ -691,21 +691,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - 'I try not to think about them too much. Even though it''s been so long, it still
+  - 'I try not to think about Alex too much. Even though it''s been so long, it still
     sort of hurts. I still don''t know what we were, I haven''t spoken with them
     in years and I don''t see that changing anytime soon. '
-  - 'Still, I just wish things could''ve gone differently. God knows I''ve gone over
-    everything a million times in my head, over what I could''ve done differently.
-    It''s easy looking back.
+  - 'I just wish things could''ve gone differently. God knows I''ve gone over everything
+    a million times in my head, over what I could''ve done differently. It''s easy
+    looking back, I guess. But...
 
 '
-  - ' I can''t really avoid it, though. I wouldn''t be who I am without them. '
-  - 'I don''t know if I''ll ever be like that with someone again. It''s definitely
-    hard to imagine, but I also couldn''t have imagined we''d be like that before
-    it happened, so who knows. '
-  - 'I don''t even know if I''m ready for something like that again, but I don''t
+  - 'I wouldn''t be who I am without them. '
+  - I don't know if I'll ever be like that with someone again. I can barely imagine
+    it, but then I couldn't have imagined that the two of us would've found that
+    spark. So who knows.
+  - 'I don''t even know if I''m ready for something like that again, but... I don''t
     really think I need it either. I can handle myself for a while. '
-  - Despite everything, we had good times.
+  - ... The two of us had some good times, didn't we?
   blackScreen: {fileID: 2057854444}
   Activated: 0
 --- !u!114 &679602903
@@ -1629,32 +1629,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "It's tough to go through my college experiences without coming back
-        to them. \nTheir laugh, the way they always knew what to say, how it felt
-        like they knew everything about every book ever made."
+      value: It's tough to go through my college experiences without coming back
+        to Alex. Their laugh, the way they always knew what to say, how it felt like
+        they knew everything about every book ever written.
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Every day I regret never going back to that damn park. \nI didn't think
-        I could handle it, I still don't, but I still just should've just been there
-        one more time.\r\n"
+      value: "Every day I regret never going back to that damn park. \n\nI didn't
+        think I could handle it, I still don't, but- just- one more time? I don't
+        know.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "\rIt was October, and the trees were the color of fire.\nI had brought
+      value: "\rIt was October, and the trees were the color of fire. I had brought
         one of my old blankets for use to eat on. Its lavender stripes were hideous,
-        but they fit pretty well for a picnic. \nAlex had cooked some rolls for us,
+        but they fit pretty well for a picnic. Alex had cooked some rolls for us,
         but by the time we'd arrived they'd all gone cold.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: They seemed disappointed; I didn't mind. The rolls were still great.
+      value: They seemed disappointed, but I didn't mind. The rolls were still great.
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: " I remember Alex wearing that dorky teal windbreaker they brought everywhere.
-        \nThey must've thought it was going to be frigid like every other day in
-        that damned month, but... for some reason, that day, it was warm."
+      value: I remember Alex wearing that dorky teal windbreaker they brought everywhere.
+        They must've thought it was going to be frigid like every other day in that
+        damned month, but... for some reason, that day, it was warm.
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957830181504, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: m_Name

@@ -809,15 +809,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - It's hard to overstate how much each and every one of them meant to me. Honestly,
-    there were times these past few years where I almost felt like I wanted to quit
-    painting, where it just felt like too much.
-  - "Especially after me and Alex broke up, it just felt impossible to do anything.\r\nEven
-    still, through everything, all the good and all the bad, my friends stuck with
-    me. And as such, I've tried my hardest to do the same for them. \r\n"
-  - Through everything, I feel like I've grown a lot stronger. I know for sure that
-    four years ago I wouldn't be able to handle something like what I've been going
-    through lately, but now... I feel like I could.
+  - It's hard to overstate how much each and every one of those dorks meant to me.
+    Honestly, there were times these past few years where I almost felt like I wanted
+    to quit painting, where it just felt like too much.
+  - "Especially after me and Alex broke up, it just felt impossible to do anything.\r\n\nBut
+    through everything, all the good and all the bad, my friends stuck with me. And
+    I've tried my hardest to do the same for them. \r"
+  - Through everything, I feel like I've grown a lot stronger. I keep thinking back
+    to Delphi from four years ago. That unhatched egg couldn't have handled anything
+    like what I've been going through lately, but now... I feel like I can.
   - "I think I've painted enough for today. \n\n"
   - "I've got some work to do tomorrow. \r"
   blackScreen: {fileID: 1714694292}
@@ -1686,36 +1686,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Near the beginning of my last quarter here, all my friends decided
+      value: "Near the beginning of my last quarter here, all my art friends decided
         to go to the beach. Everything was so bright. \nAmy's old umbrella, its vivid
-        pink colors never seeming to fade with age, felt like the only respite from
+        pink colors blazing in defiance of its age, felt like the only respite from
         the scorch of the sun. "
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "The sky that day was a searing blue, just looking out into the sea
-        would hurt your eyes. The only thing that seemed soft was the yellows of
-        the sand. \nThe wind was so strong; If you weren't careful it would knock
-        you right over. \n"
+      value: 'The sky that day was a searing blue, just looking out into the sea
+        would hurt your eyes. The wind was so strong; If you weren''t careful it
+        would knock you right over. '
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[2]
       value: "It seemed like nature itself was fighting against us in every way it
-        could, and yet, my smile stayed the entire day.\r"
+        could. And yet- my smile stayed the entire day.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "It was hard for us all to hang out. Everyone's schedules seemed specifically
-        engineered to interfere with someone else. \nWhen everything finally lined
-        up, it felt like a blessing, and I think we all made a silent vow to get
-        the most out of it as we could."
+      value: It was hard for us all to hang out. Each of our schedules, packed with
+        shows and classes and dead-end-jobs, seemed specifically engineered to interfere
+        with someone else's. We all made a silent vow to get the most out of it as
+        we could.
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: "Ever since graduating, I've tried my hardest to keep in contact with
-        everyone. Because most of them don't live anywhere near me, it's hard to
-        imagine anything like that day will happen again. But despite everything,
-        we already managed once. \n"
+      value: "Since graduating, I've tried my hardest to keep in contact with everyone.
+        Most of them have moved away by now, and it's hard to imagine anything like
+        that day could happen again. But we managed to do it once! \n"
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[5]

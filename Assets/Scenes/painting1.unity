@@ -614,19 +614,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - 'The moment my brush touched the canvas, I couldn''t stop. The soft yellows from
+  - 'The moment my brush touched the canvas, I couldn''t stop. The soft light of
     my desk lamp became my world, everything else just faded away. '
   - 'I completely lost track of time, my mind swimming in the blues and greens of
     my sculpted sea. I don''t think I looked away from it once. Maybe. It was a long
     time ago.
 
 '
-  - '    I finished the entire assignment that night. I remember by the time I was
-    done, it was almost 4 AM. Intro to Painting was at 8 the next morning, and so
-    I scrambled to get to sleep as fast as I could.'
-  - "Any other day I don't think I would've made it, but somehow... Somehow. \nIt
-    was a damn good painting. "
-  - I wish they gave it back.
+  - I had enough for a good grade by 11, but when I was *done*, it was almost 4 AM.
+    Intro to Painting was at 8 the next morning, and so I scrambled to get to sleep
+    as fast as I could.
+  - 'Any other day I don''t think I would''ve made it in time, but somehow... Somehow. '
+  - "It was a damn good painting. \nI wish they gave it back."
   blackScreen: {fileID: 1819305244}
   Activated: 0
 --- !u!114 &679602903
@@ -1640,8 +1639,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: 'Hey! I''m Delphi. Two weeks ago I graduated from college, and today
-        I wanted to share some of those old memories with you. '
+      value: Hey future Delphi! It's me, past Delphi. Two weeks ago I graduated college,
+        and today I wanted to share some of those old memories with you. I'm feeling-
+        nostalgic, I suppose.
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[1]
@@ -1652,15 +1652,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "   I was a biology major as a freshman, but I had no idea what I wanted
+      value: "I was a biology major as a freshman, but I had no idea what I wanted
         to do until ART-02, the Intro to Painting elective. Unlike the galleries
-        of chemical diagrams, it felt right, like I just \u201Cunderstood\u201D painting.
+        of chemical diagrams, it felt right, like I \u201Cunderstood\u201D painting.
         Like it understood me. "
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: 'The day it all clicked was our midterm, it was something about water.
-        I painted the beach. '
+      value: The day it all clicked was our midterm; we were told to do something
+        relating to water. I painted the beach. The image is hazy, but I remember
+        sitting at my desk, working away in the dark to Quest.
       objectReference: {fileID: 0}
     - target: {fileID: 8955508957830181504, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: m_Name
