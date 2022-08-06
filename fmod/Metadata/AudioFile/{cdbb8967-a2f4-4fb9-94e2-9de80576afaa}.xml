@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cdbb8967-a2f4-4fb9-94e2-9de80576afaa}">
+		<property name="assetPath">
+			<value>scribble2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.13839002267573697</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4ee40f4-76bf-477f-ada3-ccc017458242}</destination>
+		</relationship>
+	</object>
+</objects>

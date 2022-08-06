@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 [System.Serializable]
 public class dialogue : MonoBehaviour
@@ -18,7 +19,7 @@ public class dialogue : MonoBehaviour
     public GameObject blackScreen;
 
     public bool Activated;
-    bool final, tweenedBlowup, tweenedStart, tweenedEnd;
+    bool final, tweenedBlowup, tweenedStart, tweenedEnd, tweenActivate;
 
     void Start(){
         textComp = gameObject.GetComponent<Text>();
@@ -34,6 +35,7 @@ public class dialogue : MonoBehaviour
         tweenedBlowup = true;
         tweenedStart = false;
         tweenedEnd = true;
+        tweenActivate = true;
 
         sentenceLength = sentences.Length;
         textComp.text = sentences[sentenceIndex].Substring(0, wordsDisplayed);
@@ -59,6 +61,10 @@ public class dialogue : MonoBehaviour
                 if(frameCounter % frameTextRate == 0){
                     wordsDisplayed = Mathf.Min(wordsDisplayed + 1, sentences[sentenceIndex].Length);
                     textComp.text = sentences[sentenceIndex].Substring(0, wordsDisplayed);
+
+                    if(wordsDisplayed < sentences[sentenceIndex].Length && frameCounter % (frameTextRate * 3) == 0){
+                        RuntimeManager.CreateInstance("event:/charAppear").start();
+                    }
                 }
                 click();
             }
@@ -72,6 +78,7 @@ public class dialogue : MonoBehaviour
         transform.parent.position = new Vector3(pos, transform.parent.position.y, transform.parent.position.z);
         final = true;
         managerScr.drawable = false;
+        RuntimeManager.CreateInstance("event:/paperFlip").start();
     }
 
     void click(){
@@ -87,9 +94,11 @@ public class dialogue : MonoBehaviour
                         tweenedBlowup = true;
                         tweenedEnd = false;
                         scaleLeadIn = scaleLeadInInit;
+                        RuntimeManager.CreateInstance("event:/textBoxAppear").start();
                     }
                     else{       
                         textComp.text = sentences[sentenceIndex].Substring(0, wordsDisplayed);
+                        RuntimeManager.CreateInstance("event:/paperFlip").start();
                     }  
                 }
             }
@@ -98,6 +107,10 @@ public class dialogue : MonoBehaviour
     void tweening(){
         if(!tweenedStart){
             if(tweenedBlowup){
+                if(tweenActivate){
+                    RuntimeManager.CreateInstance("event:/textBoxAppear").start();
+                }
+                tweenActivate = false;
                 if(transform.parent.localScale.x < scaleBlowup.x){
                     scaleChangePos = new Vector3(scaleLeadIn, scaleLeadIn, 0f);
                     transform.parent.localScale += scaleChangePos;
@@ -137,6 +150,7 @@ public class dialogue : MonoBehaviour
                     Destroy(transform.parent.gameObject);
                     Destroy(gameObject);
                     if(final){
+                        RuntimeManager.CreateInstance("event:/sceneEnd").start();
                         GameObject fadeOut = Instantiate(blackScreen);
                         fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;
                         fadeOut.GetComponent<fadeIn_scr>().active = true;
