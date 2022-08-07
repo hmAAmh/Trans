@@ -13,8 +13,7 @@ public class dialogue : MonoBehaviour
     //public string sentence;
     Text textComp;
     int sentenceLength, sentenceIndex, lettersDisplayed, frameCounter, frameTextRate;
-    private Vector3 scaleChangePos, scaleChangeNeg, scaleDefault, scaleBlowup, scaleMin;
-    float scaleAmount, scaleLeadIn, scaleLeadInInit, scaleLeadInAmount;
+    private Vector3 scaleDefault, scaleBlowup, scaleMin;
     sceneManager_scr managerScr;
     public GameObject blackScreen;
     Screenshot screenshot;
@@ -43,23 +42,15 @@ public class dialogue : MonoBehaviour
         sentenceLength = sentences.Length;
         textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
 
-        scaleAmount = 0.00005f / 2f;
-        scaleLeadInInit = 0.00002f;
-        scaleLeadIn = scaleLeadInInit;
-        scaleLeadInAmount = scaleLeadIn / 40;
         scaleDefault = new Vector3(0.01f, 0.01f, -5f);
         scaleMin = new Vector3(0.01f / 100, 0.01f / 100, -5f);
         scaleBlowup = new Vector3(0.011f, 0.011f, -5f);
-        
-        scaleChangeNeg = new Vector3(-scaleAmount / 4, -scaleAmount / 4, 0f);
 
     }
 
     void Update(){
         if(Activated && !(managerScr.fadeIn)){
             frameCounter++;
-
-            //tweening();
 
             if(tweenedStart && tweenedEnd){
                 if(frameCounter % frameTextRate == 0){
@@ -103,7 +94,6 @@ public class dialogue : MonoBehaviour
                     if(sentenceIndex >= sentenceLength){
                         tweenedEnd = false;
                         TweenAppear(false);
-                        scaleLeadIn = scaleLeadInInit;
                         RuntimeManager.CreateInstance("event:/textBoxAppear").start();
                     }
                     else{       
