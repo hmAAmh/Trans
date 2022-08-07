@@ -12,7 +12,7 @@ public class dialogue : MonoBehaviour
     public string[] sentences;
     //public string sentence;
     Text textComp;
-    int sentenceLength, sentenceIndex, lettersDisplayed, frameCounter, frameTextRate;
+    int sentenceLength, sentenceIndex, lettersDisplayed;
     private Vector3 scaleDefault, scaleBlowup, scaleMin;
     sceneManager_scr managerScr;
     public GameObject blackScreen;
@@ -32,8 +32,6 @@ public class dialogue : MonoBehaviour
         transform.parent.localScale = new Vector3(0f, 0f, -5f);
         sentenceIndex = 0;
         lettersDisplayed = 0;
-        frameCounter = 0;
-        frameTextRate = 24;
         final = false;
 
         tweenedStart = false;
@@ -45,44 +43,35 @@ public class dialogue : MonoBehaviour
         scaleDefault = new Vector3(0.01f, 0.01f, -5f);
         scaleMin = new Vector3(0.01f / 100, 0.01f / 100, -5f);
         scaleBlowup = new Vector3(0.011f, 0.011f, -5f);
-
     }
 
-    void Update(){
-        if(Activated && !(managerScr.fadeIn)){
-            frameCounter++;
-
+    IEnumerator IterateSentence()
+    {
+        StartCoroutine(_checkForClick());
+        float soundCounter = 0;
+        float soundCounterCap = 3;
+        
+        while(true)
+        {
             if(tweenedStart && tweenedEnd){
-                if(frameCounter % frameTextRate == 0){
-                    lettersDisplayed = Mathf.Min(lettersDisplayed + 1, sentences[sentenceIndex].Length);
-                    textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
+                lettersDisplayed = Mathf.Min(lettersDisplayed + 1, sentences[sentenceIndex].Length);
+                textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
 
-                    if(lettersDisplayed < sentences[sentenceIndex].Length && frameCounter % (frameTextRate * 3) == 0){
-                        RuntimeManager.CreateInstance("event:/charAppear").start();
-                    }
+                if(lettersDisplayed < sentences[sentenceIndex].Length && soundCounter >= soundCounterCap){
+                    RuntimeManager.CreateInstance("event:/charAppear").start();
+                    soundCounter = 0;
                 }
-                click();
             }
+
+            soundCounter++;
+            yield return new WaitForSeconds(0.0325f);
         }
     }
 
-    public void setActive(){
-        float pos = 3.76001f;
-        Activated = true;
-        TweenAppear(true);
-        transform.parent.position = new Vector3(pos, transform.parent.position.y, transform.parent.position.z);
-        final = true;
-        managerScr.drawable = false;
-        RuntimeManager.CreateInstance("event:/paperFlip").start();
-
-        // Take a screenshot of the finished painting, and store it as a sprite.
-        StartCoroutine(screenshot.TakeScreenshotCoroutine());
-        memoryFade.StartFade(false, 1f);
-
-
-    }
-
-    void click(){
+    IEnumerator _checkForClick()
+    {
+        while (true)
+        {
             if(Input.GetKeyDown(KeyCode.Mouse0)){
                 if(textComp.text != sentences[sentenceIndex]){
                     textComp.text = sentences[sentenceIndex];
@@ -95,6 +84,8 @@ public class dialogue : MonoBehaviour
                         tweenedEnd = false;
                         TweenAppear(false);
                         RuntimeManager.CreateInstance("event:/textBoxAppear").start();
+                        StopCoroutine(IterateSentence());
+                        yield break;
                     }
                     else{       
                         textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
@@ -102,6 +93,23 @@ public class dialogue : MonoBehaviour
                     }  
                 }
             }
+            yield return null;
+        }
+    }
+
+    public void setActive()
+    {
+        float pos = 3.76001f;
+        Activated = true;
+        TweenAppear(true);
+        transform.parent.position = new Vector3(pos, transform.parent.position.y, transform.parent.position.z);
+        final = true;
+        managerScr.drawable = false;
+        RuntimeManager.CreateInstance("event:/paperFlip").start();
+
+        // Take a screenshot of the finished painting, and store it as a sprite.
+        StartCoroutine(screenshot.TakeScreenshotCoroutine());
+        memoryFade.StartFade(false, 1f);
     }
 
     public void TweenAppear(bool appear)
@@ -117,6 +125,7 @@ public class dialogue : MonoBehaviour
             StartCoroutine(_TweenLocalScale(scaleBlowup, scaleMin, 0.4f));    
         }
     }
+
     IEnumerator _TweenLocalScale(Vector3 startingScale, Vector3 endingScale, float maxTime,
                                 bool startTweenedStart=false ) // Whether or not we mark tweenedStart as true after lerping.
     {
@@ -134,7 +143,7 @@ public class dialogue : MonoBehaviour
                 yield return null;
             }
         currentlyTweening = false;
-        if(startTweenedStart){ tweenedStart = true; }
+        if(startTweenedStart){ tweenedStart = true;     StartCoroutine(IterateSentence()); }
 
         if (endingScale == scaleMin) // IE: If we have shrunk down to nothing.
         {
@@ -151,7 +160,7 @@ public class dialogue : MonoBehaviour
             }
             else{
                 managerScr.drawable = true;
-                memoryFade.StartFade(true, 2f);
+                memoryFade.StartFade(true, 1.5f);
             }
         }
     }

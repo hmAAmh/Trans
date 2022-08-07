@@ -32,7 +32,7 @@ public class fadeIn_scr : MonoBehaviour
             // If we're fading in from black, we start at full alpha, and a target alpha of 0f.
         }
         else{
-            print("fading out to black");
+            //print("fading out to black");
             tmp.a = 0f;
             targetAlpha = 1f;
             // If we're fading out to black, we start at 0 alpha, and a target alpha of 1f.
