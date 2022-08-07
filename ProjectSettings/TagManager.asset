@@ -10,6 +10,7 @@ TagManager:
   - Background
   - PaintingScreenshot
   - sceneManager
+  - FinishButton
   layers:
   - Default
   - TransparentFX

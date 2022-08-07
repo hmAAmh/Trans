@@ -150,7 +150,6 @@ public class dialogue : MonoBehaviour
             Destroy(transform.parent.gameObject);
             Destroy(gameObject);
             if(final){
-                
                 RuntimeManager.CreateInstance("event:/sceneEnd").start();
                 GameObject fadeOut = Instantiate(blackScreen);
                 //print("activated from dialogue");
@@ -159,6 +158,7 @@ public class dialogue : MonoBehaviour
                 fadeOut.transform.position = new Vector3(0f, 0f, 0f);
             }
             else{
+                GameObject.FindWithTag("FinishButton").GetComponent<Button>().enabled = true;
                 managerScr.drawable = true;
                 memoryFade.StartFade(true, 1.5f);
             }
