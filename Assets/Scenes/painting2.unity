@@ -438,7 +438,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -706,7 +706,7 @@ MonoBehaviour:
   - 'I don''t even know if I''m ready for something like that again, but... I don''t
     really think I need it either. I can handle myself for a while. '
   - ... The two of us had some good times, didn't we?
-  blackScreen: {fileID: 2057854444}
+  blackScreen: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
   Activated: 0
 --- !u!114 &679602903
 MonoBehaviour:
@@ -1622,7 +1622,7 @@ PrefabInstance:
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: blackScreen
       value: 
-      objectReference: {fileID: 2057854444}
+      objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.size
       value: 5
@@ -2303,68 +2303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6015c5ab33b2f4fa77a3cae70b8a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &2057854443
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 35.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 14.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_Name
-      value: blackScreen (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
---- !u!1 &2057854444 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-  m_PrefabInstance: {fileID: 2057854443}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2819310850979366286
 PrefabInstance:
   m_ObjectHideFlags: 0

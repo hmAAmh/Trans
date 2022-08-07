@@ -5,32 +5,78 @@ using UnityEngine.SceneManagement;
 
 public class fadeIn_scr : MonoBehaviour
 {
-    float initRate, initChange;
+    float targetAlpha;
     public bool fadeIn, active;
     private bool muscFadeOut = false;
     
     Color tmp;
-    sceneManager_scr managerScr;
+    //sceneManager_scr managerScr;
 
     void Start(){
-        managerScr = GameObject.Find("sceneManager").GetComponent<sceneManager_scr>();
+        //managerScr = GameObject.FindWithTag("sceneManager").GetComponent<sceneManager_scr>();
+        //if (managerScr == null){print("could not find managerScr");}
 
-        initRate = 0.0001f;
-        initChange = initRate / 32;
+        if(active){ BeginFade(); }
+    }
+
+    void InitializeColor()
+    {
         tmp = gameObject.GetComponent<SpriteRenderer>().color;
 
         if(fadeIn){
             tmp.a = 1f;
+            targetAlpha = 0f;
+            // If we're fading in from black, we start at full alpha, and a target alpha of 0f.
         }
         else{
+            print("fading out to black");
             tmp.a = 0f;
-            initRate *= -1f;
-            initChange *= -1f;
+            targetAlpha = 1f;
+            // If we're fading out to black, we start at 0 alpha, and a target alpha of 1f.
         }
         gameObject.GetComponent<SpriteRenderer>().color = tmp;
     }
 
-    void Update(){
+    public void BeginFade()
+    {
+        InitializeColor();
+
+        if(!fadeIn && !muscFadeOut){
+                muscFadeOut = true;
+                GameObject.FindWithTag("sceneManager").GetComponent<sceneManager_scr>().muscFadeOut = true;
+            }
+
+        StartCoroutine(_FadeRoutine());
+    }
+
+    IEnumerator _FadeRoutine()
+    {
+        
+        float elapsed = 0;
+        Color starting = gameObject.GetComponent<SpriteRenderer>().color;
+        Color inprogress = starting;
+
+        while (elapsed < 3f){
+
+                inprogress.a = Mathf.Lerp(starting.a, targetAlpha, (elapsed/3f));
+                print(inprogress.a);
+                gameObject.GetComponent<SpriteRenderer>().color = inprogress;
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+        GameObject.FindWithTag("sceneManager").GetComponent<sceneManager_scr>().fadeIn = false;
+            if(!fadeIn){
+                SceneManager.LoadScene (sceneName:
+                                        GameObject.FindWithTag("sceneManager").
+                                        GetComponent<sceneManager_scr>().nextScene);
+                }
+            else{
+                Destroy(gameObject);
+                }
+    }
+
+    /*void Update(){
         if(active){
             if(!fadeIn && !muscFadeOut){
                 muscFadeOut = true;
@@ -43,14 +89,8 @@ public class fadeIn_scr : MonoBehaviour
             initRate += initChange;
 
             if(tmp.a < 0f || tmp.a > 3f){
-                managerScr.fadeIn = false;
-                if(!fadeIn){
-                    SceneManager.LoadScene (sceneName:managerScr.nextScene);
-                }
-                else{
-                    Destroy(gameObject);
-                }
+                
             }
         }
-    }
+    }*/
 }

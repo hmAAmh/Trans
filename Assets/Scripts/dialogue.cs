@@ -162,8 +162,9 @@ public class dialogue : MonoBehaviour
                         
                         RuntimeManager.CreateInstance("event:/sceneEnd").start();
                         GameObject fadeOut = Instantiate(blackScreen);
+                        print("activated from dialogue");
                         fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;
-                        fadeOut.GetComponent<fadeIn_scr>().active = true;
+                        fadeOut.GetComponent<fadeIn_scr>().BeginFade();
                         fadeOut.transform.position = new Vector3(0f, 0f, 0f);
                     }
                     else{

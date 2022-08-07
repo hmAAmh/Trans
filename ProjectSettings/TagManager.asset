@@ -9,6 +9,7 @@ TagManager:
   - Memory
   - Background
   - PaintingScreenshot
+  - sceneManager
   layers:
   - Default
   - TransparentFX

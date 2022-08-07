@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2819310850970250009}
   m_Layer: 0
   m_Name: sceneManager
-  m_TagString: Untagged
+  m_TagString: sceneManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,3 +47,4 @@ MonoBehaviour:
   fadeIn: 1
   nextScene: 
   musc: event:/muscMorning
+  muscFadeOut: 0

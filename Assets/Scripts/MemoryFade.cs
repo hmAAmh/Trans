@@ -16,7 +16,7 @@ public class MemoryFade : MonoBehaviour
         foreach (SpriteRenderer spr in gameObject.GetComponentsInChildren<SpriteRenderer>())
         { if (spr != memoryRenderer){ borderRenderer = spr; } }
 
-        print(borderRenderer);
+        //print(borderRenderer);
 
     }
 

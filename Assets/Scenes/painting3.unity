@@ -438,7 +438,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -820,7 +820,7 @@ MonoBehaviour:
     like what I've been going through lately, but now... I feel like I can.
   - "I think I've painted enough for today. \n\n"
   - "I've got some work to do tomorrow. \r"
-  blackScreen: {fileID: 1714694292}
+  blackScreen: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
   Activated: 0
 --- !u!114 &679602903
 MonoBehaviour:
@@ -1679,7 +1679,7 @@ PrefabInstance:
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: blackScreen
       value: 
-      objectReference: {fileID: 1714694292}
+      objectReference: {fileID: 0}
     - target: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
       propertyPath: sentences.Array.size
       value: 6
@@ -2041,68 +2041,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8968155906323929376, guid: 1e4b69b8995363946969ea849a261d48, type: 3}
   m_PrefabInstance: {fileID: 1596654822}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1714694291
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 43
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 17.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452400, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-      propertyPath: m_Name
-      value: blackScreen (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
---- !u!1 &1714694292 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3048106404413452405, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
-  m_PrefabInstance: {fileID: 1714694291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813876426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,7 +2150,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7157399666539836617, guid: cda80f13abc669a47b6aa0c3fd329a2e, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7157399666539836617, guid: cda80f13abc669a47b6aa0c3fd329a2e, type: 3}
       propertyPath: m_LocalPosition.x

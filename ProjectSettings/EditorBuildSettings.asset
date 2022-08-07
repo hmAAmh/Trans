@@ -6,24 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: 1d20247a54838cf4d95ac993fe2dc609
+  - enabled: 1
     path: Assets/Scenes/painting1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/JermaDumpy.unity
-    guid: dbc2b6cb2490f3c4abc851cb9de9aec5
-  - enabled: 1
-    path: Assets/Scenes/DialogTest.unity
-    guid: 6a76f6ffcee7e9244ad2c0c0d96317f2
-  - enabled: 1
-    path: Assets/Scenes/painting3.unity
-    guid: a51c348784acd0c4aba82edc02f1a203
   - enabled: 1
     path: Assets/Scenes/painting2.unity
     guid: 1148229e007fe664984ffc203dcad4d1
   - enabled: 1
+    path: Assets/Scenes/painting3.unity
+    guid: a51c348784acd0c4aba82edc02f1a203
+  - enabled: 1
     path: Assets/Scenes/ending.unity
     guid: 15de34c3e85f7c642aae16e7ab71a84c
-  - enabled: 1
-    path: Assets/Scenes/menu.unity
-    guid: 1d20247a54838cf4d95ac993fe2dc609
   m_configObjects: {}
