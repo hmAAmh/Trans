@@ -12,7 +12,7 @@ public class dialogue : MonoBehaviour
     public string[] sentences;
     //public string sentence;
     Text textComp;
-    int sentenceLength, sentenceIndex, wordsDisplayed, frameCounter, frameTextRate;
+    int sentenceLength, sentenceIndex, lettersDisplayed, frameCounter, frameTextRate;
     private Vector3 scaleChangePos, scaleChangeNeg, scaleDefault, scaleBlowup, scaleMin;
     float scaleAmount, scaleLeadIn, scaleLeadInInit, scaleLeadInAmount;
     sceneManager_scr managerScr;
@@ -32,7 +32,7 @@ public class dialogue : MonoBehaviour
         
         transform.parent.localScale = new Vector3(0f, 0f, -5f);
         sentenceIndex = 0;
-        wordsDisplayed = 0;
+        lettersDisplayed = 0;
         frameCounter = 0;
         frameTextRate = 24;
         final = false;
@@ -41,7 +41,7 @@ public class dialogue : MonoBehaviour
         tweenedEnd = true;
 
         sentenceLength = sentences.Length;
-        textComp.text = sentences[sentenceIndex].Substring(0, wordsDisplayed);
+        textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
 
         scaleAmount = 0.00005f / 2f;
         scaleLeadInInit = 0.00002f;
@@ -63,10 +63,10 @@ public class dialogue : MonoBehaviour
 
             if(tweenedStart && tweenedEnd){
                 if(frameCounter % frameTextRate == 0){
-                    wordsDisplayed = Mathf.Min(wordsDisplayed + 1, sentences[sentenceIndex].Length);
-                    textComp.text = sentences[sentenceIndex].Substring(0, wordsDisplayed);
+                    lettersDisplayed = Mathf.Min(lettersDisplayed + 1, sentences[sentenceIndex].Length);
+                    textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
 
-                    if(wordsDisplayed < sentences[sentenceIndex].Length && frameCounter % (frameTextRate * 3) == 0){
+                    if(lettersDisplayed < sentences[sentenceIndex].Length && frameCounter % (frameTextRate * 3) == 0){
                         RuntimeManager.CreateInstance("event:/charAppear").start();
                     }
                 }
@@ -95,11 +95,11 @@ public class dialogue : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Mouse0)){
                 if(textComp.text != sentences[sentenceIndex]){
                     textComp.text = sentences[sentenceIndex];
-                    wordsDisplayed = sentences[sentenceIndex].Length;
+                    lettersDisplayed = sentences[sentenceIndex].Length;
                 }
                 else{
                     sentenceIndex++;
-                    wordsDisplayed = 0;
+                    lettersDisplayed = 0;
                     if(sentenceIndex >= sentenceLength){
                         tweenedEnd = false;
                         TweenAppear(false);
@@ -107,7 +107,7 @@ public class dialogue : MonoBehaviour
                         RuntimeManager.CreateInstance("event:/textBoxAppear").start();
                     }
                     else{       
-                        textComp.text = sentences[sentenceIndex].Substring(0, wordsDisplayed);
+                        textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
                         RuntimeManager.CreateInstance("event:/paperFlip").start();
                     }  
                 }
