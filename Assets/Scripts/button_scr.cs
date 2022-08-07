@@ -20,7 +20,7 @@ public class button_scr : MonoBehaviour
             clicked = true;
             RuntimeManager.CreateInstance("event:/sceneEnd").start();
             GameObject fadeOut = Instantiate(blackScreen);
-            print("activated from button");
+            //print("activated from button");
             fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;
             fadeOut.GetComponent<fadeIn_scr>().BeginFade();
             fadeOut.transform.position = new Vector3(0f, 0f, 0f);

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using FMODUnity;
 
 [System.Serializable]
-public class dialogue : MonoBehaviour
+public class dialogue_ARCHIVE : MonoBehaviour
 {
     [TextArea(3, 10)]
     public string[] sentences;
@@ -21,8 +21,7 @@ public class dialogue : MonoBehaviour
     MemoryFade memoryFade;
 
     public bool Activated;
-    bool final, tweenedStart, tweenedEnd;
-    bool currentlyTweening = false;
+    bool final, tweenedBlowup, tweenedStart, tweenedEnd, tweenActivate;
 
     void Start(){
         textComp = gameObject.GetComponent<Text>();
@@ -37,8 +36,10 @@ public class dialogue : MonoBehaviour
         frameTextRate = 24;
         final = false;
 
+        tweenedBlowup = true;
         tweenedStart = false;
         tweenedEnd = true;
+        tweenActivate = true;
 
         sentenceLength = sentences.Length;
         textComp.text = sentences[sentenceIndex].Substring(0, wordsDisplayed);
@@ -52,14 +53,13 @@ public class dialogue : MonoBehaviour
         scaleBlowup = new Vector3(0.011f, 0.011f, -5f);
         
         scaleChangeNeg = new Vector3(-scaleAmount / 4, -scaleAmount / 4, 0f);
-
     }
 
     void Update(){
         if(Activated && !(managerScr.fadeIn)){
             frameCounter++;
 
-            //tweening();
+            tweening();
 
             if(tweenedStart && tweenedEnd){
                 if(frameCounter % frameTextRate == 0){
@@ -78,7 +78,6 @@ public class dialogue : MonoBehaviour
     public void setActive(){
         float pos = 3.76001f;
         Activated = true;
-        TweenAppear(true);
         transform.parent.position = new Vector3(pos, transform.parent.position.y, transform.parent.position.z);
         final = true;
         managerScr.drawable = false;
@@ -101,8 +100,8 @@ public class dialogue : MonoBehaviour
                     sentenceIndex++;
                     wordsDisplayed = 0;
                     if(sentenceIndex >= sentenceLength){
+                        tweenedBlowup = true;
                         tweenedEnd = false;
-                        TweenAppear(false);
                         scaleLeadIn = scaleLeadInInit;
                         RuntimeManager.CreateInstance("event:/textBoxAppear").start();
                     }
@@ -114,54 +113,65 @@ public class dialogue : MonoBehaviour
             }
     }
 
-    public void TweenAppear(bool appear)
-    {
-        if (appear)
-        {
-            StartCoroutine(_TweenLocalScale(scaleMin, scaleBlowup, 0.25f, true));
-            StartCoroutine(_TweenLocalScale(scaleBlowup, scaleDefault, 0.4f));
-        }
-        else
-        {
-            StartCoroutine(_TweenLocalScale(scaleDefault, scaleBlowup, 0.25f));
-            StartCoroutine(_TweenLocalScale(scaleBlowup, scaleMin, 0.4f));    
-        }
-    }
-    IEnumerator _TweenLocalScale(Vector3 startingScale, Vector3 endingScale, float maxTime,
-                                bool startTweenedStart=false ) // Whether or not we mark tweenedStart as true after lerping.
-    {
-
-        while (currentlyTweening == true){ yield return null; }
-
-        currentlyTweening = true;
-        float elapsed = 0;
-        Vector3 currentFactor = Vector3.one;
-        while (elapsed < maxTime){
-
-                currentFactor = Vector3.Lerp(startingScale, endingScale, (elapsed/maxTime));
-                transform.parent.localScale = currentFactor;
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-        currentlyTweening = false;
-        if(startTweenedStart){ tweenedStart = true; }
-
-        if (endingScale == scaleMin) // IE: If we have shrunk down to nothing.
-        {
-            Destroy(transform.parent.gameObject);
-            Destroy(gameObject);
-            if(final){
-                
-                RuntimeManager.CreateInstance("event:/sceneEnd").start();
-                GameObject fadeOut = Instantiate(blackScreen);
-                //print("activated from dialogue");
-                fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;
-                fadeOut.GetComponent<fadeIn_scr>().BeginFade();
-                fadeOut.transform.position = new Vector3(0f, 0f, 0f);
+    void tweening(){
+        if(!tweenedStart){
+            if(tweenedBlowup){
+                if(tweenActivate){
+                    RuntimeManager.CreateInstance("event:/textBoxAppear").start();
+                }
+                tweenActivate = false;
+                if(transform.parent.localScale.x < scaleBlowup.x){
+                    scaleChangePos = new Vector3(scaleLeadIn, scaleLeadIn, 0f);
+                    transform.parent.localScale += scaleChangePos;
+                    scaleLeadIn += scaleLeadInAmount;
+                }
+                else{
+                    tweenedBlowup = false;
+                }
             }
             else{
-                managerScr.drawable = true;
-                memoryFade.StartFade(true, 2f);
+                if(transform.parent.localScale.x > scaleDefault.x){
+                    transform.parent.localScale += scaleChangeNeg;
+                }
+                else{
+                    tweenedStart = true;
+                    transform.parent.localScale = scaleDefault;
+                }
+            }
+        }
+        if(!tweenedEnd){
+            if(tweenedBlowup){
+                if(transform.parent.localScale.x < scaleBlowup.x){
+                    transform.parent.localScale -= scaleChangeNeg;
+                }
+                else{
+                    tweenedBlowup = false;
+                }
+            }
+            else{
+                if(transform.parent.localScale.x > scaleMin.x){
+                    scaleChangePos = new Vector3(scaleLeadIn, scaleLeadIn, 0f);
+                    transform.parent.localScale -= scaleChangePos;
+                    scaleLeadIn += scaleLeadInAmount;
+                }
+                else{
+                    
+                    Destroy(transform.parent.gameObject);
+                    Destroy(gameObject);
+                    if(final){
+                        
+                        RuntimeManager.CreateInstance("event:/sceneEnd").start();
+                        GameObject fadeOut = Instantiate(blackScreen);
+                        print("activated from dialogue");
+                        fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;
+                        fadeOut.GetComponent<fadeIn_scr>().BeginFade();
+                        fadeOut.transform.position = new Vector3(0f, 0f, 0f);
+                    }
+                    else{
+                        managerScr.drawable = true;
+                        memoryFade.StartFade(true, 2f);
+                    }
+                }
             }
         }
     }

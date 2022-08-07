@@ -8,6 +8,9 @@ public class fadeIn_scr : MonoBehaviour
     float targetAlpha;
     public bool fadeIn, active;
     private bool muscFadeOut = false;
+    [SerializeField] bool original = false; // Mark this as true in the inspector to signal that this object is the
+                                            // fade present at the start of every scene
+    [SerializeField] dialogue dialogue;
     
     Color tmp;
     //sceneManager_scr managerScr;
@@ -59,7 +62,7 @@ public class fadeIn_scr : MonoBehaviour
         while (elapsed < 3f){
 
                 inprogress.a = Mathf.Lerp(starting.a, targetAlpha, (elapsed/3f));
-                print(inprogress.a);
+                //print(inprogress.a);
                 gameObject.GetComponent<SpriteRenderer>().color = inprogress;
                 elapsed += Time.deltaTime;
                 yield return null;
@@ -72,6 +75,7 @@ public class fadeIn_scr : MonoBehaviour
                                         GetComponent<sceneManager_scr>().nextScene);
                 }
             else{
+                if (original){ dialogue.TweenAppear(true); }
                 Destroy(gameObject);
                 }
     }

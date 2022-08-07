@@ -450,8 +450,8 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -459,14 +459,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
+--- !u!114 &519420029
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1782,6 +1787,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
+--- !u!114 &1352526211 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8955508957319910844, guid: a90e94d3c34d3bf418fcc74e94fa0853, type: 3}
+  m_PrefabInstance: {fileID: 1352526210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd33f55a5a88c346a06ae2d1f8dedde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1494791805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2440,6 +2456,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3048106404413452406, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
       propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048106404413452406, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 1352526211}
+    - target: {fileID: 3048106404413452406, guid: f3d799e56c5c0e5439530ddb3bb3bea8, type: 3}
+      propertyPath: original
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
