@@ -18,7 +18,7 @@ public class button_scr : MonoBehaviour
         if(!clicked){
             Debug.Log("test!");
             clicked = true;
-            RuntimeManager.CreateInstance("event:/sceneEnd").start();
+            RuntimeManager.PlayOneShot("event:/sceneEnd");
             GameObject fadeOut = Instantiate(blackScreen);
             //print("activated from button");
             fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;

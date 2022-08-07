@@ -58,7 +58,7 @@ public class dialogue : MonoBehaviour
                 textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
 
                 if(lettersDisplayed < sentences[sentenceIndex].Length && soundCounter >= soundCounterCap){
-                    RuntimeManager.CreateInstance("event:/charAppear").start();
+                    RuntimeManager.PlayOneShot("event:/charAppear");
                     soundCounter = 0;
                 }
             }
@@ -83,13 +83,13 @@ public class dialogue : MonoBehaviour
                     if(sentenceIndex >= sentenceLength){
                         tweenedEnd = false;
                         TweenAppear(false);
-                        RuntimeManager.CreateInstance("event:/textBoxAppear").start();
+                        RuntimeManager.PlayOneShot("event:/textBoxAppear");
                         StopCoroutine(IterateSentence());
                         yield break;
                     }
                     else{       
                         textComp.text = sentences[sentenceIndex].Substring(0, lettersDisplayed);
-                        RuntimeManager.CreateInstance("event:/paperFlip").start();
+                        RuntimeManager.PlayOneShot("event:/paperFlip");
                     }  
                 }
             }
@@ -105,7 +105,7 @@ public class dialogue : MonoBehaviour
         transform.parent.position = new Vector3(pos, transform.parent.position.y, transform.parent.position.z);
         final = true;
         managerScr.drawable = false;
-        RuntimeManager.CreateInstance("event:/paperFlip").start();
+        RuntimeManager.PlayOneShot("event:/paperFlip");
 
         // Take a screenshot of the finished painting, and store it as a sprite.
         StartCoroutine(screenshot.TakeScreenshotCoroutine());
@@ -116,6 +116,7 @@ public class dialogue : MonoBehaviour
     {
         if (appear)
         {
+            RuntimeManager.PlayOneShot("event:/textBoxAppear");
             StartCoroutine(_TweenLocalScale(scaleMin, scaleBlowup, 0.25f, true));
             StartCoroutine(_TweenLocalScale(scaleBlowup, scaleDefault, 0.4f));
         }
@@ -150,7 +151,7 @@ public class dialogue : MonoBehaviour
             Destroy(transform.parent.gameObject);
             Destroy(gameObject);
             if(final){
-                RuntimeManager.CreateInstance("event:/sceneEnd").start();
+                RuntimeManager.PlayOneShot("event:/sceneEnd");
                 GameObject fadeOut = Instantiate(blackScreen);
                 //print("activated from dialogue");
                 fadeOut.GetComponent<fadeIn_scr>().fadeIn = false;

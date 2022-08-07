@@ -68,10 +68,10 @@ public class Draw_script : MonoBehaviour
                 if (hit.transform.tag == "paintBlob"){
                     materialUsed = hit.transform.GetComponent<SpriteRenderer>().material;
                     currentColor = hit.transform.GetComponent<SpriteRenderer>().color;
-                    RuntimeManager.CreateInstance("event:/paintSelect").start();
+                    RuntimeManager.PlayOneShot("event:/paintSelect");
                 }
                 else if (hit.transform.tag == "drawingCanvas"){
-                    RuntimeManager.CreateInstance("event:/painting").start();
+                    RuntimeManager.PlayOneShot("event:/painting");
                 }
             }
         }
